@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?><?import javafx.scene.text.Font?>
+<VBox fx:id="content" prefHeight="361.0" prefWidth="577.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="my.bak.trafic.view.controler.SettingDatabaseControler">
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+    <children>
+        <Label text="Database setting">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+        </Label>
+        <GridPane hgap="5.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="182.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="383.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Database name:" />
+                <TextField fx:id="dbNameTF" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                <Label text="User name:" GridPane.rowIndex="1" />
+                <Label text="Password:" GridPane.rowIndex="2" />
+                <TextField fx:id="userNameTF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="pwdTF" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#handleSave" prefWidth="100.0" text="Save" />
+                        <Button fx:id="resetBtn" mnemonicParsing="false" onAction="#handleReset" prefWidth="100.0" text="Reset" />
+                    </children>
+                </HBox>
+                <Label text="Start with connect to DB:" GridPane.rowIndex="4" />
+                <CheckBox fx:id="startWithCon" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+        </GridPane>
+    </children>
+</VBox>

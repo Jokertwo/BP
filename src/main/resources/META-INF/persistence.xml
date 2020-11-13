@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <!--     <persistence-unit name="voho" transaction-type="RESOURCE_LOCAL"> -->
+    <!--         <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+    <!--         <properties> -->
+    <!--         EclipseLink should create the database schema automatically -->
+    <!--             <property name="eclipselink.ddl-generation.output-mode" value="database" /> -->
+    <!--             <property name="eclipselink.ddl-generation" value="create-tables" /> -->
+
+    <!--             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/traffic?rewriteBatchedStatements=true" /> -->
+    <!--             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> -->
+    <!--             <property name="javax.persistence.jdbc.user" value="root" /> -->
+    <!--             <property name="javax.persistence.jdbc.password" value="" /> -->
+
+    <!--         logger -->
+    <!--             <property name="eclipselink.logging.level" value="FINE" /> -->
+
+    <!--         Enable batch writing -->
+    <!--             <property name="eclipselink.jdbc.batch-writing" value="jdbc" /> -->
+    <!--         Batch size -->
+    <!--             <property name="eclipselink.jdbc.batch-writing.size" value="1000" /> -->
+
+    <!--             <property name="eclipselink.query-results-cache" value="true" /> -->
+    <!--             <property name="eclipselink.jdbc.cache-statements" value="true" /> -->
+
+    <!--         </properties> -->
+    <!--     </persistence-unit> -->
+
+
+    <!--     <persistence-unit name="hsqldb-eclipselink" transaction-type="RESOURCE_LOCAL"> -->
+    <!--         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+    <!--         <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+    <!--         <properties> -->
+    <!--             <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" /> -->
+    <!--             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:db/traffic;shutdown=true" /> -->
+    <!--             <property name="javax.persistence.jdbc.user" value="sa" /> -->
+    <!--             <property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> -->
+
+    <!--             Logger -->
+    <!--             <property name="eclipselink.logging.level" value="FINE" /> -->
+    <!--         </properties> -->
+    <!--     </persistence-unit> -->
+
+
+    <persistence-unit name="hibernate" transaction-type="RESOURCE_LOCAL">
+
+        <description>Hibernate EntityManager Demo</description>
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>my.bak.trafic.database.entity.Time</class>
+        <class>my.bak.trafic.database.entity.Location</class>
+        <class>my.bak.trafic.database.entity.TraficData</class>
+        <class>my.bak.trafic.database.entity.Type</class>
+        <class>my.bak.trafic.database.entity.Value</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <shared-cache-mode>ALL</shared-cache-mode>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+        </properties>
+    </persistence-unit>
+
+</persistence>
+
+

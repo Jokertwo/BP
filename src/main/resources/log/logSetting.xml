@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="separator">${sys:line.separator}</Property>
+        <Property name="pattern">[%-4level - %c{1}.%M()] - %msg${separator}</Property>
+
+    </Properties>
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}" />
+        </Console>
+
+
+    </Appenders>
+    <Loggers>
+
+        <Root level="INFO">
+            <AppenderRef ref="Console-Appender" />
+        </Root>
+        <Logger name="org.hibernate" level="info" additivity="false">
+            <AppenderRef ref="Console-Appender" />
+        </Logger>
+        <Logger name="org.hibernate.SQL" level="info" additivity="false">
+            <AppenderRef ref="Console-Appender" />
+        </Logger>
+        <Logger name="org.hibernate.type.descriptor.sql" level="info" additivity="false">
+            <AppenderRef ref="Console-Appender" />
+        </Logger>
+
+
+    </Loggers>
+</Configuration>
